@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\MiControlador;//añadido para la tercera forma
+//use \App\Http\Controllers\MiControlador;//añadido para la tercera forma
 use \App\Http\Controllers\CorreoController;
+use \App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,10 @@ Route::view('/tutores', '/trabajoFCT/tutores')->name('tutores');
 
 //Rutas Formulario Centros De Trabajo
 Route::view('/centrosDeTrabajos', '/trabajoFCT/centrosTrabajo')->name('centrosTrabajo');
+
+//Ruta api rest postman
+//Route::post('/consultaBaseDeDatos', 'ConsultasController@toArray')->name('consultaBaseDeDatos');
+
+//Apartado Api Rest
+Route::resource('contacts', 'ContactController');
+Route::apiResource('contacts', 'ContactController');
